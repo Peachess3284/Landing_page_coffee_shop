@@ -1,0 +1,579 @@
+:root{
+    --main-color: #d3ad7f;
+    --background-color: #010103;
+    --black: #13131a;
+    --border: .1rem solid rgba(255, 255, 255, .2);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+    color: white;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;    
+}
+
+html::-webkit-scrollback-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body {
+    background: var(--background-color);
+}
+
+/* header */
+
+.header {
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;    
+}
+
+.header .logo img {
+    height: 6rem;
+}
+
+.header .navbar.active {
+    right: 0;
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5em;
+    margin-left: 2em;;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .search-form {
+    position: absolute;
+    top: 115%; right: 7%;
+    background-color: #fff;
+    width: 50em;
+    height: 5em;
+    display: flex;
+    align-items: center; 
+    transform: scaleY(0);
+    transform-origin: top;   
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+} 
+
+.header .search-form input {    
+    width: 50em;
+    height: .5em;
+    font-size: 1.6em;
+    color: var(--black);
+    padding: 1em;
+    text-transform: none;    
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 2.2em;
+    margin-right: 1.5em;
+    color: var(--black);
+}
+
+.header .search-form label :hover {
+    color: var(--main-color);
+}
+
+.header .cart-items-container {
+    position: absolute;
+    top: 100%; right: -100%;
+    height: calc(100vh - 9.5em);
+    width: 35em;
+    background: #fff;
+    padding: 0 1.5em;
+}
+
+.header .cart-items-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .cart-items-container.active {
+    right: 0;
+}
+
+.header .cart-items-container .cart-item {
+    position: relative;
+    margin: 2em 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.header .cart-items-container .cart-item .fa-xmark {
+    position: absolute;
+    top: 1em; right: 1em;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--black);    
+}
+
+.header .cart-items-container .cart-item .fa-xmark:hover {
+    color: var(--main-color);
+}
+
+.header .cart-items-container .cart-item img {
+    height: 7em;    
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 2em;
+    color: var(--black);
+    padding-bottom: .5em;
+}
+
+.header .cart-items-container .cart-item .content  .price {
+    font-size: 1.5em;
+    color: var(--black);   
+}
+
+
+/* buttons */
+.btn {
+    margin-top: 1em;
+    display: inline-block;
+    padding: .7em .3em;
+    font-size: 1.7em;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: .2em;
+}
+
+.header .cart-items-container .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* media queries */ 
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5em 2em;
+    }
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%; right: -100%;
+        background: #fff;
+        width: 30em;
+        height: calc(100vh - 9.5em);
+    }
+
+    .header .navbar a{
+        color: var(--black);
+        display: block;
+        margin: 1.5em;
+        padding: .5em;
+        font-size: 2em;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2em;
+    }
+}
+
+/* home section */
+
+section {
+    padding: 2em 7%;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../img/home-img.jpeg) no-repeat;
+    background-size: cover;
+    background-position: left;
+    justify-content: center;    
+}
+
+.home .content {
+    max-width: 60em;
+}
+
+.home .content h3 {
+    font-size: 3.5em;
+    text-transform: uppercase;
+}
+
+.home .content p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 1em 0;
+    font-weight: lighter;
+}
+
+/* about section */
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 3.5em;
+    font-size: 3em;
+}
+
+.heading span {
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.about .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--black);
+    gap: 1em;
+}
+
+.about .row .image {
+    flex: 1 1 45em;
+}
+
+.about .row img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 45em;
+    padding: 2em;
+}
+
+.about .row .content h3 {
+    font-size: 3em;
+    
+}
+
+.about .row .content p {
+    font-size: 2em;
+    color: #ccc;
+    padding: 1em 0;
+    line-height: 1.8em;
+}
+
+/* menu section */
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1.5em;
+}
+
+.menu .box-container .box {
+    padding: 5em;
+    text-align: center;
+    border: var(--border);
+}
+
+
+.menu .box-container .box img {
+    height: 10em;
+}
+
+.menu .box-container .box h3 {
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+.menu .box-container .box .price {
+    font-size: 2.5rem;
+    padding: 1em 0;
+}
+
+.menu .box-container .box:hover {
+    background: #fff;
+}
+
+.menu .box-container:hover *{
+    color: var(--background-color);
+}
+
+.menu .box-container .box .price span {
+    color: #ccc;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    padding: 1em 0;
+}
+
+/* products section */
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1.5em;
+}
+
+.products .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 2em;
+}
+
+.products .box-container .box .icons a { 
+    font-size: 2em;    
+    margin: 1em .2em;
+    padding: 1em;
+}
+
+.products .box-container .box .icons a:hover {
+    background: #fff;
+    color: var(--background-color)
+}
+
+.products .box-container .box .content {
+    margin-top: 1em;
+    font-size: 1.5em;
+    line-height: 1.8em;
+}
+
+.products .box-container .box .content .stars i {
+    color: var(--main-color);
+}
+
+.products .box-container .box .content .price {
+    font-size: 2em;
+    margin-top: .5em;
+}
+
+.products .box-container .box .content .price span{
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #ccc;
+    font-weight: lighter;
+}
+
+/* review section */
+.review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1.5em;    
+}
+
+.review .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 2em;
+    font-size: 2em;    
+    line-height: 1.5em;
+}
+
+.review .box-container .box  p {
+    font-size: .8em;
+    line-height: 2em;
+    margin: 1em 0;
+}
+
+.review .box-container .box .user {
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.review .box-container .box .stars i{
+    color: var(--main-color)
+}
+
+/* contact section */ 
+.contact .row {
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1em; 
+}
+
+.contact .row .map {
+    flex: 1 1 45em;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45em;    
+}
+
+.contact .row form h3 {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+
+.contact .row form .inputbox {
+    display: flex;
+    align-items: center;
+    margin: 2em 0;
+    background: var(--black);
+    border: var(--border);
+}
+
+.contact .row form .inputbox span {
+    font-size: 2em;
+    padding-left: 2em;
+}
+
+.contact .row form .inputbox input {
+    width: 100%;
+    padding: 2em;
+    font-size: 1.7em;
+    background: none;
+}
+
+/* blogs section */
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1.5em;    
+}
+
+.blogs .box-container .box {
+    border: var(--border);
+}
+
+.blogs .box-container .box .image {
+    height: 25em;
+    overflow: hidden;
+    width: 100%;
+}
+
+.blogs .box-container .box .image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blogs .box-container .box .image img:hover {
+    transform: scale(1.2);
+}
+
+.blogs .box-container .box .content {
+    padding: 2em;
+}
+
+.blogs .box-container .box .content .title {
+    font-size: 2.5em;
+    line-height: 1.5em;
+}
+
+.blogs .box-container .box .content .title:hover {
+    color: var(--main-color)
+}
+
+.blogs .box-container .box .content span {
+    color: var(--main-color);
+    display: block;    
+    font-size: 1.5em;
+}
+
+.blogs .box-container .box .content p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-top: 1em;
+}
+
+/* footer section */
+.footer {
+    background: var(--black);
+    text-align: center;    
+}
+
+.footer .share {
+    padding: .5em 0;        
+}
+
+.footer .share a {
+    height: 3em;
+    width: 3em;
+    line-height: 5em;
+    font-size: 2em;        
+    border-radius: 50%;    
+}
+
+.footer .share a:hover {
+    color: var(--main-color);
+}
+
+.footer .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+    gap: 1em;
+
+}
+
+.footer .links a {  
+    font-size: 1.5em;
+    padding: .5em;
+    margin-bottom: 1em;;    
+}
+
+.footer .links a:hover {  
+    background-color: var(--main-color);
+    color: var(--black)
+}
+
+.footer .credit {
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding: 1.5em;
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
