@@ -175,18 +175,25 @@ body {
 
 
 /* buttons */
-.btn {
-    margin-top: 1em;
+.btn {    
     display: inline-block;
-    padding: .7em .3em;
-    font-size: 1.7em;
-    color: #fff;
-    background: var(--main-color);
     cursor: pointer;
+    margin-top: 1em;
+    padding: 1em;    
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    font-size: 1.7em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    
 }
 
 .btn:hover {
-    letter-spacing: .2em;
+    opacity: .8;
+    font-size: 1.75em;
 }
 
 .header .cart-items-container .btn {
