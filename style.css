@@ -254,17 +254,25 @@ section {
 }
 
 .home .content {
-    max-width: 60em;
+    max-width: 70em;
+    position: relative;
+    right: 22em;
+    padding: 2em 5em;
+    background: rgba(19, 19, 26, .4);
+    backdrop-filter: blur(5px);
+    box-shadow: 10px 10px 10px var(--background-color);  
+    border-radius: 3px; 
 }
 
+
 .home .content h3 {
-    font-size: 3.5em;
+    font-size: 4.5em;
     text-transform: uppercase;
 }
 
 .home .content p {
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 2.5em;
+    line-height: 1.2em;
     padding: 1em 0;
     font-weight: lighter;
 }
