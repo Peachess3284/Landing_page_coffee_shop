@@ -473,6 +473,8 @@ section {
     background: var(--black);
     flex-wrap: wrap;
     gap: 1em; 
+    padding: 2em;
+    border: var(--border);
 }
 
 .contact .row .map {
@@ -482,7 +484,7 @@ section {
 }
 
 .contact .row form {
-    flex: 1 1 45em;    
+    flex: 1 1 45em;           
 }
 
 .contact .row form h3 {
