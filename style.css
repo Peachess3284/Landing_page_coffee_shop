@@ -281,7 +281,7 @@ section {
 .heading {
     text-align: center;
     text-transform: uppercase;
-    padding-bottom: 3.5em;
+    padding: 1em 2em;
     font-size: 3em;
 }
 
@@ -312,8 +312,7 @@ section {
 }
 
 .about .row .content h3 {
-    font-size: 3em;
-    
+    font-size: 3em;    
 }
 
 .about .row .content p {
