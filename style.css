@@ -571,16 +571,12 @@ section {
     text-align: center;    
 }
 
-.footer .share {
-    padding: .5em 0;        
-}
+
 
 .footer .share a {
-    height: 3em;
-    width: 3em;
-    line-height: 5em;
     font-size: 2em;        
-    border-radius: 50%;    
+    border-radius: 50%;   
+    padding: 1.5em .8em; 
 }
 
 .footer .share a:hover {
